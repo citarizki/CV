@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Cita Rizkia Ramadhani</title>
+    <!-- Menggunakan font Google untuk hasil yang mirip -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Container Utama */
+        .cv-container {
+            width: 800px;
+            background-color: #fbf9f4; /* Warna krem seperti di gambar */
+            display: flex;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- KOLOM KIRI --- */
+        .left-col {
+            width: 32%;
+            background-color: #fbf9f4;
+            padding: 40px 25px;
+            border-right: 1px solid #dcdcdc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-box {
+            width: 180px;
+            height: 230px;
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-info {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: #8b6d52;
+        }
+
+        .contact-item i {
+            width: 25px;
+            font-size: 16px;
+            color: #4a403a;
+        }
+
+        /* Garis Pemisah Bergelombang */
+        .divider-wave {
+            width: 100%;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q 25 0, 50 5 T 100 5' fill='none' stroke='%238b6d52' stroke-width='3'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            margin: 20px 0;
+        }
+
+        .left-col h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .skill-list {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .skill-list li {
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #333;
+        }
+
+        .skill-list li i {
+            color: #8b6d52;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        /* --- KOLOM KANAN --- */
+        .right-col {
+            width: 68%;
+            padding: 40px 40px 40px 30px;
+        }
+
+        .header-title h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header-title h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 14px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #222;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            display: inline-block;
+            background-color: #d6c6ae; /* Warna beige */
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            color: #222;
+            padding: 5px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .section-divider .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #222;
+        }
+
+        .section-divider .circle-left,
+        .section-divider .circle-right {
+            width: 12px;
+            height: 12px;
+            background-color: #222;
+            border-radius: 50%;
+        }
+
+        .section-divider .circle-left {
+            margin-right: 10px;
+        }
+
+        .section-divider .circle-right {
+            margin-left: 10px;
+        }
+
+        .profile-text {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-item h4 {
+            font-size: 16px;
+            color: #222;
+            margin-bottom: 3px;
+        }
+
+        .edu-item p {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 2px;
+        }
+
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-item h4 {
+            font-size: 15px;
+            color: #222;
+            margin-bottom: 2px;
+        }
+
+        .exp-item .position {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .exp-item ul {
+            padding-left: 20px;
+        }
+
+        .exp-item ul li {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- BAGIAN KIRI -->
+        <div class="left-col">
+            <div class="photo-box">
+                <!-- Ganti 'foto.jpg' dengan nama file foto Anda -->
+                <img src="foto.jpg" alt="Foto Cita Rizkia Ramadhani">
+            </div>
+
+            <div class="contact-info">
+                <!-- Nomor Telepon -->
+                <a href="tel:+6285156357262" class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+6285156357262</span>
+                </a>
+                <!-- Email -->
+                <a href="mailto:citarizkia@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>citarizkia@gmail.com</span>
+                </a>
+                <!-- Lokasi -->
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Karawang, Jawa Barat</span>
+                </div>
+            </div>
+
+            <!-- FITUR BARU: Tautan WA dan IG -->
+            <div class="contact-info" style="margin-bottom: 0;">
+                <!-- Ganti angka 6285156357262 dengan nomor WA asli -->
+                <a href="https://wa.me/6285156357262" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <span>Kirim Pesan WA</span>
+                </a>
+                <!-- Ganti 'citarizkia' dengan username IG asli -->
+                <a href="https://www.instagram.com/citarizkiar/" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
+                    <span>@citarizkia</span>
+                </a>
+            </div>
+
+            <div class="divider-wave"></div>
+
+            <h2>KEAHLIAN</h2>
+            <ul class="skill-list">
+                <li><i class="fa-solid fa-chevron-right"></i> Komunikasi</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Microsoft Excel</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Pelayanan Pelanggan</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Kerja Tim</li>
+            </ul>
+
+            <div class="divider-wave"></div>
+
+            <h2>BAHASA</h2>
+            <ul class="skill-list">
+                <li><i class="fa-solid fa-chevron-right"></i> Bahasa Indonesia</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Bahasa Inggris</li>
+            </ul>
+        </div>
+
+        <!-- BAGIAN KANAN -->
+        <div class="right-col">
+            
+            <div class="header-title">
+                <h1>CITA RIZKIA RAMADHANI</h1>
+                <h3>PELAYANAN PELANGGAN | ADMINISTRASI</h3>
+            </div>
+
+            <div class="section-title">PROFIL</div>
+            <p class="profile-text">
+                Saya adalah pribadi yang termotivasi dan adaptif dengan kemampuan komunikasi yang baik serta pelayanan pelanggan yang kuat. Saya cepat belajar, terorganisir, dan berkomitmen untuk memberikan kontribusi positif di lingkungan kerja.
+            </p>
+
+            <div class="section-divider">
+                <div class="circle-left"></div>
+                <div class="line"></div>
+                <div class="circle-right"></div>
+            </div>
+
+            <div class="section-title">PENDIDIKAN</div>
+            <div class="edu-item">
+                <h4>Universitas Gajah Mada</h4>
+                <p>Diploma di Bidang Layanan Pelanggan</p>
+                <p>2020 – 2022</p>
+            </div>
+
+            <div class="section-divider">
+                <div class="circle-left"></div>
+                <div class="line"></div>
+                <div class="circle-right"></div>
+            </div>
+
+            <div class="section-title">PENGALAMAN KERJA</div>
+            
+            <div class="exp-item">
+                <h4>Nama Perusahaan: PT. Maju Bersama</h4>
+                <div class="position">Posisi: Staf Administrasi | 2022 – 2024</div>
+                <ul>
+                    <li>Mengelola tugas administrasi harian dengan akurat dan tertib.</li>
+                    <li>Membantu pelanggan dan menangani pertanyaan dengan ramah.</li>
+                    <li>Bekerja sama dengan tim untuk mencapai target perusahaan.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h4>Nama Perusahaan: PT. Sukses Mandiri</h4>
+                <div class="position">Posisi: Staf Administrasi | 2024 – 2026</div>
+                <ul>
+                    <li>Mengelola dokumen dan data perusahaan.</li>
+                    <li>Membantu pelanggan dengan profesional.</li>
+                    <li>Bekerja sama dengan tim untuk mencapai tujuan kerja.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
